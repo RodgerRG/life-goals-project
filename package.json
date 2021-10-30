@@ -2,6 +2,7 @@
   "name": "universal-platform",
   "version": "0.1.0",
   "private": true,
+  "main": "public/main.js",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "cra-template-typescript": "1.1.2",
@@ -14,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "electron ."
   },
   "eslintConfig": {
     "extends": [
