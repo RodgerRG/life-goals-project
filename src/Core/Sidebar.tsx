@@ -1,10 +1,12 @@
-import { SwipeableDrawer } from '@material-ui/core';
-import Router from './Router/Router';
+import { List, SwipeableDrawer } from '@material-ui/core';
+import { BuildRouteList } from './Router/Router';
 import Routes from './Router/Routes';
 
 const Sidebar = () : JSX.Element => {
     return <SwipeableDrawer onClose={() => {}} onOpen={() => {}} open>
-        <Router routes={Routes}/>
+        <List>
+            {BuildRouteList(Routes)}
+        </List>
     </SwipeableDrawer>
 }
 

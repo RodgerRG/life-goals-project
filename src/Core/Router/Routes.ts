@@ -3,8 +3,8 @@ import { RouteProps } from './Route';
 
 const Routes : RouteProps[] = [
     {
-        name: '',
-        endpoint: '',
+        name: 'Home',
+        endpoint: '/',
         component: HomeScreen
     }
 ]
