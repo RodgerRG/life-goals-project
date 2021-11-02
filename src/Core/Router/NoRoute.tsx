@@ -1,9 +1,14 @@
 import React from 'react';
+import { Route } from 'react-router';
 
-const NoRoute = () : JSX.Element => {
+export const NoRoute = () : JSX.Element => {
+    return <Route path="*" component={NoRouteScreen} key={"noMatch"}/>
+}
+
+const NoRouteScreen = () : JSX.Element => {
     return <div>
             NO MATCHING ROUTE
         </div>
 }
 
-export default NoRoute;
+export default NoRouteScreen;

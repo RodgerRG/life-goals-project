@@ -10,7 +10,7 @@ const createWindow = () => {
     });
 
     //TODO: Add in a variable that we can use from the .env for what the URL is
-    win.loadURL('http://localhost:3000');
+    win.loadFile('public/index.html');
     win.webContents.openDevTools({mode: 'detach' });
   }
 
