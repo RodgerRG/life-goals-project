@@ -1,5 +1,5 @@
-import { AppBar, IconButton, Toolbar } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+import { AppBar, IconButton, Toolbar } from '@mui/material';
+import { Menu } from '@mui/icons-material';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleSidebarOpen } from '../Redux/Slices/siteSlice';

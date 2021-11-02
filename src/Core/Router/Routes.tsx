@@ -1,6 +1,6 @@
 import HomeScreen from '../../Home/HomeScreen';
 import { RouteProps } from './Route';
-import { Home } from '@material-ui/icons';
+import { Home } from '@mui/icons-material';
 
 export interface SidebarItemProps {
     name: string,

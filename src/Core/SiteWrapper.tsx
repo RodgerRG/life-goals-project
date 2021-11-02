@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import { setRoutes, setCurrentRoute } from '../Redux/Slices/siteSlice';
 import Footer from './Footer';
 import Header from './Header';
@@ -18,14 +19,14 @@ const SiteWrapper = () : JSX.Element => {
     }, [dispatch]);
 
     //TODO: Create a container component for the router screen
-    return <div>
+    return <BrowserRouter>
             <Header />
             <Sidebar />
             <div style={{height: '80vh', marginTop: '10vh'}}>
-                <Router routes={Routes}/>
+                <Router />
             </div>
             <Footer />
-        </div>
+        </BrowserRouter>
 }
 
 export default SiteWrapper;

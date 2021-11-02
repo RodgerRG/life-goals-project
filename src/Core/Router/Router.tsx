@@ -1,34 +1,51 @@
-import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import { setCurrentRoute, setRoutes } from '../../Redux/Slices/siteSlice';
+import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { Switch, useHistory } from 'react-router-dom';
 import { RootState } from '../../Redux/Stores/store';
-import BuildRoute, { RouteProps } from './Route';
+import { RouteProps } from './Route';
 import { RouteModel } from './Routes';
 
 export interface RouterProps {
     routes: RouteProps[]
 }
 
-const Router = (props: RouterProps) => {
+const Router = () => {
     const routes = useSelector((state : RootState) => state.SiteReducer.routes);
 
-    return <BrowserRouter>
-            <Switch>
+    return  <Switch>
                 {routes.map(route => route)}
             </Switch>
-        </BrowserRouter>
 }
 
 const BuildRouteListItem = (route: RouteModel) : JSX.Element => {
-    return <ListItem key={route.endpoint}>
-        <ListItemIcon>
+    const history = useHistory();
+    const changeRoute = () => {
+        history.push(route.endpoint);
+    }
+    return <ListItemButton sx={
+        {
+            width: '12vw',
+            minWidth: '280px',
+            maxWidth: '300px'
+        }
+    } key={route.endpoint} onClick={() => changeRoute()}>
+        <ListItemIcon sx={
+            {
+                width: '20%',
+                padding: '5%'
+            }
+        }>
             {route.icon}
         </ListItemIcon>
-        <ListItemText>
+        <ListItemText sx={
+            {
+                width: '75%',
+                textAlign: 'left'
+            }
+        }>
             {route.name}
         </ListItemText>
-    </ListItem>
+    </ListItemButton>
 }
 
 export const BuildRouteList = (routes: RouteModel[]) : JSX.Element[] => {
