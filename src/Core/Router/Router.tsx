@@ -1,20 +1,12 @@
 import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { Switch, useHistory } from 'react-router-dom';
-import { RootState } from '../../Redux/Stores/store';
-import { RouteProps } from './Route';
-import { RouteModel } from './Routes';
-
-export interface RouterProps {
-    routes: RouteProps[]
-}
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import Routes, { RouteModel } from './Routes';
 
 const Router = () => {
-    const routes = useSelector((state : RootState) => state.SiteReducer.routes);
-
-    return  <Switch>
-                {routes.map(route => route)}
-            </Switch>
+    return <Switch>
+            {Routes.map(route => <Route path={route.endpoint} component={route.component} key={route.endpoint}/>)}
+            <Redirect from={'/'} to={'/home'}></Redirect>
+        </Switch>
 }
 
 const BuildRouteListItem = (route: RouteModel) : JSX.Element => {

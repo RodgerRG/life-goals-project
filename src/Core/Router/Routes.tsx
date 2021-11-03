@@ -1,6 +1,5 @@
 import HomeScreen from '../../Home/HomeScreen';
 import FinanceScreen from '../../Finance/FinanceScreen';
-import { RouteProps } from './Route';
 import { AttachMoney, Home } from '@mui/icons-material';
 
 export interface SidebarItemProps {
@@ -8,21 +7,24 @@ export interface SidebarItemProps {
     icon: JSX.Element
 }
 
-export interface RouteModel extends RouteProps, SidebarItemProps {}
+export interface RouteModel extends SidebarItemProps {
+    endpoint: string,
+    component: () => JSX.Element
+}
 
 const Routes : RouteModel[] = [
-    {
-        name: 'Home',
-        endpoint: '/',
-        component: HomeScreen,
-        icon: <Home />
-    },
     {
         name: 'Cash Money',
         endpoint: '/finances',
         component: FinanceScreen,
         icon: <AttachMoney />
-    }
+    },
+    {
+        name: 'Home',
+        endpoint: '/home',
+        component: HomeScreen,
+        icon: <Home />
+    },
 ]
 
 export default Routes;
