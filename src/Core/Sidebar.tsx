@@ -13,6 +13,7 @@ const Sidebar = () : JSX.Element => {
             width: 'fit-content',
             '& .MuiDrawer-paper': {
                 width: 'fit-content',
+                backgroundColor: '#fafafa',
             }
         }}
         onClose={() => {dispatch(toggleSidebarOpen())}} onOpen={() => {dispatch(toggleSidebarOpen())}} open={open}>

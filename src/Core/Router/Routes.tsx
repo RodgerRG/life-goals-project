@@ -1,6 +1,7 @@
 import HomeScreen from '../../Home/HomeScreen';
+import FinanceScreen from '../../Finance/FinanceScreen';
 import { RouteProps } from './Route';
-import { Home } from '@mui/icons-material';
+import { AttachMoney, Home } from '@mui/icons-material';
 
 export interface SidebarItemProps {
     name: string,
@@ -15,6 +16,12 @@ const Routes : RouteModel[] = [
         endpoint: '/',
         component: HomeScreen,
         icon: <Home />
+    },
+    {
+        name: 'Cash Money',
+        endpoint: '/finances',
+        component: FinanceScreen,
+        icon: <AttachMoney />
     }
 ]
 
