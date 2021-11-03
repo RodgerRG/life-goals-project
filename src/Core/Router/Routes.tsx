@@ -14,16 +14,16 @@ export interface RouteModel extends SidebarItemProps {
 
 const Routes : RouteModel[] = [
     {
-        name: 'Cash Money',
-        endpoint: '/finances',
-        component: FinanceScreen,
-        icon: <AttachMoney />
-    },
-    {
         name: 'Home',
         endpoint: '/home',
         component: HomeScreen,
         icon: <Home />
+    },
+    {
+        name: 'Cash Money',
+        endpoint: '/finances',
+        component: FinanceScreen,
+        icon: <AttachMoney />
     },
 ]
 
